@@ -1,0 +1,17 @@
+from flask import Flask, render_template
+import requests
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    # Fetch SpaceX launch data from the API
+    response = requests.get('https://api.spacexdata.com/v4/launches')
+    launches = response.json()
+
+    return render_template('index.html', launches=launches)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
