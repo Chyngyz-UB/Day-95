@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpaceX Launches</title>
+</head>
+<body>
+<h1>SpaceX Launches</h1>
+<ul>
+    {% for launch in launches %}
+    <li>
+        <strong>Mission Name:</strong> {{ launch.name }}<br>
+        <strong>Flight Number:</strong> {{ launch.flight_number }}<br>
+        <strong>Launch Date:</strong> {{ launch.date_utc }}<br>
+        <strong>Rocket Name:</strong> {{ launch.rocket }}</p>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
